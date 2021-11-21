@@ -1,0 +1,723 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Muthu  - Amazon Rekogniton React Applications</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="CodableX Pvt Ltd.">
+	<meta name="copyright" content="CodableX Pvt Ltd.">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2021-08-018T15:41:14+05:30">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	<link rel="stylesheet" href="assets/css/custom.css" media="screen">
+
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />	
+
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/cufon.js"></script>
+	<script src="assets/js/font.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/bootstrap-scrollspy.js"></script>
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script>Cufon.replace("h1, h2, h3, h4, h5, h6");</script>	
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='450',easing='easeOutExpo';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#f8aa00; font-weight: 600;}
+		
+		ol li { padding: 3px 0;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#EFAD0D), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #1f00cc;
+		}
+		hr{border-top:1px solid #aaa;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{ background-color: #2f1160;color: #2d056e; font-size: 14px;}
+
+		#documenter_sidebar ul a.current{background:#ffc400;color:#262626;}
+		#documenter_sidebar ul a{color:#fff;}
+		#documenter_sidebar ul a:hover{background:#ffc400;color:#262626;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>		
+<body class="documenter-project">
+
+	<div id="documenter_sidebar">
+	
+		<a href="#documenter_cover" id="documenter_logo" style="padding-top:4rem; padding-left:1rem;"><br/> Amazon Rekognition <br>React App</a>
+		
+		<ul id="documenter_nav">
+					
+		
+			<li><a href="#sdk-installation" title="Javascript SDK Installation">AWS Installation</a></li>
+         <li><a href="#backend-deploy" title="Installation">Deploy Backend</a></li>
+			<li><a href="#s3-configuration" title="Installation">Create S3 and Configure</a></li>
+         <li><a href="#frontend-deploy" title="Installation">Deploy React App (Frontend)</a></li>
+         <li><a href="#setup-app" title="Installation">Setup Rekognition Account</a></li>
+			<li><a href="#create-iam-user" title="Installation">Create AWS IAM User</a></li>						
+			<li><a href="#create-bucket" title="Create Bucket">Create Amazon S3 Bucket</a></li>
+			
+		</ul>
+		
+		<div id="documenter_copyright">Copyright Muthu</div>
+	</div>
+	
+	<div id="documenter_content" data-spy="scroll" data-target="documenter_nav">
+	
+		
+
+
+		<section id="s3-information">
+
+			<div class="page-header"><h3>Amazon Rekognition Video Information</h3><hr class="notop"></div>
+			
+			
+		</section>
+
+
+		<section id="sdk-installation">
+
+			<div class="page-header"><h3>AWS Javascript SDK Installation (Version 2.9)</h3><hr class="notop"></div>
+			<p>The AWS Javascript SDK v2.9 comes included in the app - offical AWS Javascript SDK</p>
+			<p>If you want to install AWS Javascript SDK by yourself, you can visit the following link for the up to date instructions regarding installation of <strong>AWS Javascript SDK v2.9 and its new versions</strong> directly from Amazon Web Services page</p>
+			<p><a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html"_blank">AWS Javascript SDK Installation</a></p>
+			
+		</section>
+
+
+      <section id="backend-deploy">
+			<div class="page-header"><h3>Deploy Rekognition Backend in AWS Elastic Beanstalk - NodeJS</h3><hr class="notop"></div>
+         <h4 style="color:red">Step 1</h4>
+         <ol>
+            <li><h6>Create Elastic Beanstalk please visit - Elastic Beanstalk section <a href="https://console.aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk </a> and Click Create Application</h6></li> 
+            <li><h6>On Create a web app page - Provide application name.</h6>
+               <p> <strong>A</strong> - In platform section Select Platform -> Node.js, Platform branch -> Node.js 14 support, Platform version - 5.4.4 (Or any Recommended) as shown in the picture:</p>
+                  <p><img src="assets/images_update/BeanStalkStart.png" style="max-width:50%" /></p>
+               <p> <strong>B</strong> - In Application code section. Select Upload your code and Source code origin section select Local file and upload "Release Backend vXX.zip" file and Tap <strong>Configuration more option.</strong></p>
+                  <p><img src="assets/images_update/Upload_beanstalk.png" style="max-width:50%" /></p>
+            </li>
+            <li><h6>Configure.</h6>
+               <p> <strong>A</strong> - In configuration scroll down and select software section <strong>Edit</strong></p>
+                  <p><img src="assets/images_update/config_beanstalk_software.png" style="max-width:50%" /></p>
+               <p> <strong>B</strong> - Modify software page add environment variable in section <strong>Environment properties </strong> as shown in the picture:</p>
+                  <p><img src="assets/images_update/beanstalk_env_property.png" style="max-width:70%" /></p>
+                  <p>Change JWT_TOKEN_KEY value as you want. Paste your mongo connection URL with Database name. <a href="https://www.mongodb.com/">MongoDB</a>. Here is the link to setup sentry error logs <a href="https://sentry.io/ ">Sentry.IO</a></p>
+                  <pre style="overflow: auto !important;" class="prettyprint lang-css linenums">
+JWT_TOKEN_KEY=changeThisKeyAsYouWant            #Use for jwt encryption
+MONGO_DB_CONNECTION=mongodb+srv://dbUser:{password}@clusterX.zXXX.gcp.mongodb.net/{DBNAME}   #Create user in mongoDB 
+SENTRY_CONNECTION={entry.io}                 #Only need if you want to enable sentry.io Log
+</pre>
+            </li>
+            <li><h6> Save with above configuration and Proceed to Create App</h6>
+            </li>
+            <li><h6> It will start progress and this will take a few mintues to complete.</h6>
+               <p> <strong>A</strong> - Wait for deployment progress to finish</p>
+                  <p><img src="assets/images_update/BeanStalkDeployProgress.png" style="max-width:50%" /></p>
+            </li>
+            <li><h6> Once you successfully deployed </h6>
+               <p> <strong>A</strong> - it will display as shown in the picture:</p>
+                  <p><img src="assets/images_update/Beanstalk_deploy_done.png" style="max-width:70%" /></p>
+                  <h6>Now you are successfully completed backend deployment. copy the backend URL for later use.</h6>
+            </li>
+         </ol>
+		</section>
+
+
+		<section id="s3-configuration">
+		
+			<div class="page-header"><h3>Create S3 Bucket with General Settings Configuration</h3><hr class="notop"></div>
+			<h4 style="color:red">Step 2</h4>
+			<p> In order to run  App - you need to update the following lines accordingly:
+				<ol>
+
+					<li><p>Create AWS IAM User with <strong>Amazon Rekognition Full Access</strong> and <strong>Amazon S3 Bucket Full Access</strong> Policies attached (Explained in Step 2 of Batch Translate setup).</p>
+						<p>Download and save Access Key and Secret Access Key of the User</p>
+						<p>Create Amazon S3 bucket for uploading (image files)</p>
+						<p>Make sure you are using the AWS Region where Amazon Rekognition is available, you can check from here whether or not your AWS Region supports Amazon Translate: <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services">Check Service Availability</a></p>
+
+						<ul>
+							<li>For creating AWS IAM user please visit - Create AWS IAM User section </li>
+							<li>For creating Amazon S3 Bucket please visit - Create Amazon S3 Bucket section </li>
+						</ul>
+
+						<p> <strong>A</strong> - Provide Non Public Access to the S3 bucket as shown in the picture:</p>
+							<p><img src="assets/images_update/S3BlockAllPublic.png" style="max-width:70%" /></p>
+
+						<p> <strong>B</strong> - Set CORS Configuration as shown in the picture: Below given config.</p>
+							<p><img src="assets/images_update/S3_CORS.png" style="max-width:70%" /></p>
+
+                     <pre style="overflow: auto !important;" class="prettyprint lang-css linenums">
+[
+   {
+      "AllowedHeaders": [
+         "*"
+      ],
+      "AllowedMethods": [
+         "GET",
+         "PUT",
+         "POST",
+         "DELETE"
+      ],
+      "AllowedOrigins": [
+         "*"
+      ],
+      "ExposeHeaders": []
+    }
+]
+</pre>
+					</li>
+
+					<li><p>Open Config folder and temporarily edit the 'React App Frontend example.env' file accordingly: <span style="color: red;">[DONT ADD THIS FILE IN ANY GIT REPO]</span></p></li>	
+					<li><p>Provide AWS IAM Access Key - REACT_APP_ACCESS_KEY, Secret Access Key - REACT_APP_SECRET_KEY, S3 Region - REACT_APP_REGION, 
+                  S3 Bucket Name - REACT_APP_BUCKET_NAME. </p>
+                  <br/>
+                  Here is the link to setup sentry error logs <a href="https://sentry.io/ ">Sentry.io</a>
+						<ul>							
+							<pre style="overflow: auto !important;" class="prettyprint lang-css linenums">
+REACT_APP_BACKEND_BASE_URL=http://
+
+REACT_APP_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXX # IAM User Access key (in case if you want to hard code directly )
+REACT_APP_SECRET_KEY=XXXX                 # IAM User Secret Access key (in case if you want to hard code directly)
+REACT_APP_REGION=XXXX                     # AWS S3 Region (selected data center)
+REACT_APP_BUCKET_NAME=XXXX                # AWS S3 Bucket Name
+
+REACT_APP_S3_API_VERSION=2006-03-01
+REACT_APP_DIR_NAME=Faces/
+REACT_APP_FACE_START_WITH=xFace
+REACT_APP_S3_PHOTO_SEPARATOR=_
+REACT_APP_FACE_COMPARE_SIMILARITY_THRESHOLD=80
+REACT_APP_FACE_MATCH_THRESHOLD=80
+REACT_APP_MIN_CONFIDENCE=80
+REACT_APP_MAX_LABEL_DETECT=15
+REACT_APP_PPE_DETECT_MIN_CONFIDENCE=90
+
+REACT_APP_SENTRY_DNS_URL=https://       # Only need if you want to enable sentry.io log
+</pre>
+							</li>
+
+						</ul>
+					
+					</li>
+					<br/>
+					<br/>
+				</ol>
+			</p>
+		</section>
+
+
+      <section id="frontend-deploy">
+			<div class="page-header"><h3>Deploy  frontend in AWS Amplify - React.js</h3><hr class="notop"></div>
+         <h4 style="color:red">Step 3</h4>
+         <ol>
+            <li><h6>Create Amplify App please visit - AWS Amplify section <a href="https://console.aws.amazon.com/amplify/">AWS Amplify </a> and Click New app then select Host your web app</h6></li> 
+            <li><h6>Go to  source folder extracted "React App Frontend Release xx.zip" and Push all file (except .env) to <a href="https://bitbucket.org/">bitbucket</a> (You can use any private)  private repository. <span style="color: red;"><br/>* [Don't upload in public repository and Don't add .env files even in private repository]</span></li> 
+            <li><h6>Let start with Amplify. On Create a Host web app. </h6>
+               <p> <strong>A</strong> -  Select bitbucket to and click continue. </p>
+                  <p><img src="assets/images_update/Amplify_start_repo.png" style="max-width:50%" /></p>
+               <p> <strong>B</strong> - Allow/Accept AWS amplify to access your given repository account. <strong>Allow/Accept</strong></p>
+               <p> <strong>C</strong> - Select your repository name and your branch name and Click next</p>
+                  <p><img src="assets/images_update/Amplify_repo_branch.png" style="max-width:50%" /></p>
+               <p> <strong>D</strong> - Configure build setting by copy pase below script in Build and test settings by click Edit. Click save once you done. Click next.</p>
+                  <p><img src="assets/images_update/Amplify_config.png" style="max-width:50%" /></p>
+                  <p><strong>You can find this amplify_Build setting.yml file in Configure Folder</strong></p>
+                  <pre style="overflow: auto !important;" class="prettyprint lang-css linenums">
+version: 1
+frontend:
+   phases:
+      preBuild:
+      commands:
+         - npm install
+      build:
+      commands:
+         - npm run build
+   artifacts:
+      baseDirectory: build
+      files:
+      - '**/*'
+   cache:
+      paths:
+      - node_modules/**/*
+</pre>
+               <p> <strong>E</strong> - Now have to set environment variables so select <strong>Edit</strong> start</p>
+                  <p><img src="assets/images_update/Amplify_deploy_edit_env.png" style="max-width:50%" /></p>
+               
+               <p> <strong>C</strong> - Modify software page add environment variable in section <strong>Environment variables </strong> as shown in the picture:</p>
+                  <p><img src="assets/images_update/Amplify_env_variable.png" style="max-width:50%" /></p>
+                  <p>Add below  environment variable in section Click save. Additional : Here is the link to setup sentry error logs <a href="https://sentry.io/ ">Sentry.io</a></p>
+                  <pre style="overflow: auto !important;" class="prettyprint lang-css linenums">
+REACT_APP_BACKEND_BASE_URL=http://   #Pase your AWS Beanstalk link/backend URL here
+
+REACT_APP_ACCESS_KEY=XXXX            #Add created IAM user access key
+REACT_APP_SECRET_KEY=XXXX            #Add created IAM user secret key
+REACT_APP_REGION=XXXX                #Add created S3 bucket region with (Rekognition region)
+REACT_APP_BUCKET_NAME=XXXX           #Add created S3 bucket name
+REACT_APP_S3_API_VERSION=2006-03-01  #Default version
+
+REACT_APP_DIR_NAME=Faces/             #Default S3 face store folder name
+REACT_APP_FACE_START_WITH=xFace       #Default S3 face name start with
+REACT_APP_S3_PHOTO_SEPARATOR=_         #Default S3 face name and unique id seprator
+
+REACT_APP_FACE_COMPARE_SIMILARITY_THRESHOLD=80  #Default compare face threshold
+REACT_APP_FACE_MATCH_THRESHOLD=80               #Default face match threshold
+REACT_APP_MIN_CONFIDENCE=80                     #Default min confidence
+REACT_APP_MAX_LABEL_DETECT=15                   #Default label detection count
+REACT_APP_PPE_DETECT_MIN_CONFIDENCE=90          #Default PPE detection confidence
+
+REACT_APP_SENTRY_DNS_URL=https://               #Only need if you want to enable sentry.io log
+</pre>
+            </li>
+            <li><h6> Save with above configuration and Proceed to deploy</h6>
+            </li>
+            <li><h6> It will start progress and this will take a few mintues to complete.</h6>                  
+            </li>
+            <li><h6> Once you successfully deployed. Click link to open.</h6>
+               <p> <strong>A</strong> - it will display as shown in the picture:</p>
+               <p><img src="assets/images_update/Amplify_open_app.png" style="max-width:50%" /></p>
+            </li>
+            <li><h6> Once you successfully deployed.</h6>
+               <p> <strong>A</strong> - Your application will display as shown in the picture:</p>
+               <p><img src="assets/images_update/Create_account.png" style="max-width:50%" /></p>
+                  <h6>Now you are successfully completed fontend deployment.</h6>
+            </li>
+         </ol>
+		</section>
+
+      <section id="setup-app">
+			<div class="page-header"><h3>Setup  Account</h3><hr class="notop"></div>
+         <h4 style="color:red">Step 4</h4>
+         <ol>
+            <li><h6>First time application allow you to create account freely. (Only one account you can create, Don't allow other to access.)</li> 
+            <li><h6>* Fill below user name and your secure password to Create account and conitue</h6>
+               <p><img src="assets/images_update/Create_account.png" style="max-width:50%"/></p>
+               <h6 style="color:red">Remember your username and password to login next time</h6>
+            </li>
+            <li><h6>Done!!! You have successfully completed all process</h6>
+               <p><img src="assets/images_update/done.png" style="max-width:50%"/></p>
+            </li>
+         </ol>
+		</section>
+
+
+		<section id="create-iam-user">
+		
+			<div class="page-header"><h3>Create IAM user with permissions</h3><hr class="notop"></div>
+			
+			<p>  Video requires IAM Role to allow Rekognition use S3 service. 
+			<p>Steps to setup up xRekognition</p>
+			<div>
+				<h5>Create IAM role that allows him to use Amazon Rekognition service and provides access to an S3 Bucket</h5>
+				<ol>
+					<li><h6>Select User and click Create New User</h6>						
+					</li>
+					<li><h6>Enter a User name and select Programmitc Access, follow to the next steps and store your Access Key and Secret Access Keys in a secure place</h6>
+						<p><img src="assets/images/user1.png" style="max-width:50%" /></p>
+					</li>
+					<li><h6>Select your newly created user and click on Add Permissions</h6>
+						<p><img src="assets/images/user-pass-role3.png" style="max-width:50%" /></p>
+					</li>	
+					<li><h6>Search for S3 and choose S3 Full Access permissions(if you are good with policies, you can create your own custom S3 Access Policies)</h6>
+						<p><img src="assets/images/s3-user-role.png" style="max-width:50%" /></p>
+					</li>	
+					<li><h6>Search for Rekognition and choose Rekognition Full Access permissions</h6>
+						<p><img src="assets/images/user2.png" style="max-width:50%" /></p>
+					</li>
+					<li><h6>Continue until they are added, on your last step you shoul see both of the policies about to be added to the user</h6>
+						<p><img src="assets/images/user3.png" alt=""></p>
+					</li>			
+				</ol>
+			</div>
+		</section>
+
+
+		
+		
+		<section id="create-bucket">
+		
+		
+			<div class="page-header"><h3>How to Create S3 Bucket</h3><hr class="notop"></div>
+		
+		
+                     <p>Before you can upload data to Amazon S3, you must create a bucket in one of the AWS
+                        Regions to
+                        store your data in. After you create a bucket, you can upload an unlimited number
+                        of data
+                        objects to the bucket. 
+                     </p>
+                     <p>A bucket is owned by the AWS account that created it. By default, you can create up
+                        to 100
+                        buckets in each of your AWS accounts. If you need additional buckets, you can increase
+                        your
+                        account bucket limit to a maximum of 1,000 buckets by submitting a service limit increase.
+                        For
+                        information about how to increase your bucket limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+                           Service Limits</a> in the <em>AWS General Reference</em>. 
+                     </p>
+                     <p>Buckets have configuration properties, including their geographical region, who has
+                        access
+                        to the objects in the bucket, and other metadata. 
+                     </p>
+                     <p class="title"><b>To create an S3 bucket</b></p>
+                     <ol>
+                        <li>
+                           <p>Sign in to the AWS Management Console and open the Amazon S3 console at
+                              <a href="https://console.aws.amazon.com/s3/" target="_blank">https://console.aws.amazon.com/s3/</a>.
+                           </p>
+                        </li>
+                        <li>
+                           
+                           <p>Choose <b>Create bucket</b>.
+                           </p>
+                           
+                           
+                           <div class="mediaobject">
+                              
+                              
+                              <img src="assets/images/create-bucket.png" alt="&#xA;          Create bucket button in the S3 console.&#xA;        " style="max-width:100%" />
+                              
+                              
+                           </div>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>On the <b>Name and region</b> page, type a name for your bucket and choose
+                              the AWS Region where you want the bucket to reside. Complete the fields on this page
+                              as
+                              follows:
+                           </p>
+                           
+                           <ol>
+                              <li>
+                                 
+                                 <p>For <b>Bucket name</b>, type a unique DNS-compliant name for your new
+                                    bucket. Follow these naming guidelines: 
+                                 </p>
+                                 
+                                 <div class="itemizedlist">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <ul class="itemizedlist" type="disc">
+                                       <li class="listitem">
+                                          
+                                          <p>The name must be unique across all existing bucket names in Amazon S3. </p>
+                                          
+                                       </li>
+                                       <li class="listitem">
+                                          
+                                          <p>The name must not contain uppercase characters.</p>
+                                          
+                                       </li>
+                                       <li class="listitem">
+                                          
+                                          <p>The name must start with a lowercase letter or number.</p>
+                                          
+                                       </li>
+                                       <li class="listitem">
+                                          
+                                          <p>The name must be between 3 and 63 characters long.</p>
+                                          
+                                       </li>
+                                       <li class="listitem">
+                                          
+                                          <p>After you create the bucket you cannot change the name, so choose wisely.
+                                             
+                                          </p>
+                                          
+                                       </li>
+                                       <li class="listitem">
+                                          
+                                          <p>Choose a bucket name that reflects the objects in the bucket because the bucket
+                                             name is visible in the URL that points to the objects that you're going to put in
+                                             your bucket.
+                                          </p>
+                                          
+                                       </li>
+                                    </ul>
+                                 </div>
+                              
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p>For <b>Region</b>, choose the AWS Region where you want the bucket to
+                                    reside. Choose a Region close to you to minimize latency and costs, or to address
+                                    regulatory requirements. Objects stored in a Region never leave that Region unless
+                                    you
+                                    explicitly transfer them to another Region. For a list of Amazon S3 AWS Regions, see
+                                    <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the
+                                    <em>Amazon Web Services General Reference</em>.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p>(Optional) If you have already set up a bucket that has the same settings that you
+                                    want to use for the new bucket that you want to create, you can set it up quickly
+                                    by
+                                    choosing <b>Copy settings from an existing bucket</b>, and then choosing
+                                    the bucket whose settings you want to copy.
+                                 </p>
+                                 
+                                 <p>The settings for the following bucket properties are copied: versioning, tags, and
+                                    logging.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p>Do one of the following:</p>
+                                 
+                                 <div class="itemizedlist">
+                                    
+                                    
+                                    
+                                    <ul class="itemizedlist" type="disc">
+                                       <li class="listitem">
+                                          
+                                          <p>If you copied settings from another bucket, choose <b>Create</b>.
+                                             You're done, so skip the following steps.
+                                          </p>
+                                          
+                                       </li>
+                                       <li class="listitem">
+                                          
+                                          <p>If not, choose <b>Next</b>.
+                                          </p>
+                                          
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 
+                              </li>
+                           </ol>
+                           
+                           <div class="mediaobject">
+                              
+                              <img src="assets/images/create-bucket-name-region.png" alt="&#xA;          Name and region page in the Create bucket wizard.&#xA;        " style="max-width:100%" />
+                              
+                              
+                              
+                           </div>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>On the <b>Configure options</b> page, you can configure the following
+                              properties and Amazon CloudWatch metrics for the bucket. Or, you can configure these
+                              properties and
+                              CloudWatch metrics later, after you create the bucket.
+                           </p>
+                           
+                           <ol>
+                              <li>
+                                 
+                                 <p class="title"><b><b>Versioning</b></b></p>
+                                 
+                                 <p>Select <b>Keep all versions of an object in the same bucket.</b> to
+                                    enable object versioning for the bucket. 
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p class="title"><b><b>Server access logging</b></b></p>
+                                 
+                                 <p>Select <b>Log requests for access to your bucket.</b> to enable server
+                                    access logging on the bucket. Server access logging provides detailed records for
+                                    the
+                                    requests that are made to your bucket.
+                                    
+                                 </p>
+                                 
+                                 <div class="mediaobject">
+                                    
+                                    <img src="assets/images/create-bucket-set-properties-1.png" alt="&#xA;" style="max-width:100%" />
+                                    
+                                    
+                                    
+                                 </div>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p class="title"><b><b>Tags</b></b></p>
+                                 
+                                 <p>You can use cost allocation bucket tags to annotate billing for your use of a
+                                    bucket. Each tag is a key-value pair that represents a label that you assign to a
+                                    bucket.
+                                 </p>
+                                 
+                                 <p>To add a tag, enter a <em>Key</em> and a <em>Value</em>.
+                                    Choose <b>Add another</b> to add another tag. 
+                                 </p>
+                                 
+                                 <div class="mediaobject">
+                                    
+                                    <img src="assets/images/create-bucket-set-properties-2.png" alt="&#xA;" style="max-width:100%" />
+                                    
+                                    
+                                    
+                                 </div>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p class="title"><b><b>Object-level logging</b></b></p>
+                                 
+                                 <p>Select <b>Record object-level API activity by using CloudTrail for an additional
+                                       cost</b> to enable object-level logging with CloudTrail. 
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p class="title"><b><b>Default encryption</b></b></p>
+                                 
+                                 <p>Select <b>Automatically encrypt objects when they are stored in S3</b>
+                                    to enable default encryption for the bucket. You can enable default encryption for
+                                    a
+                                    bucket so that all objects are encrypted when they are stored in the bucket. 
+                                 </p>
+                                 
+                                 <div class="mediaobject">
+                                    
+                                    <img src="assets/images/create-bucket-set-properties-3.png" alt="&#xA;              The create bucket wizard configure options page showing object-level logging&#xA;                and default encryption check boxes.&#xA;            " style="max-width:100%" />
+                                    
+                                    
+                                    
+                                 </div>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p class="title"><b><b>Object lock</b></b></p>
+                                 
+                                 <p>Select <b>Permanently allow objects in this bucket to be locked</b> if
+                                    you want to be able to lock objects in the bucket. Object lock requires that you enable
+                                    versioning on the bucket. 
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p class="title"><b><b>CloudWatch request metrics</b></b></p>
+                                 
+                                 <p>Select <b>Monitor requests in your bucket for an additional cost.</b>
+                                    to configure CloudWatch request metrics for the bucket.
+                                 </p>
+                                 
+                                 <div class="mediaobject">
+                                    
+                                    <img src="assets/images/create-bucket-config-management.png" alt="&#xA;              Configure options page showing the CloudWatch metrics check box.&#xA;            " style="max-width:100%" />
+                                    
+                                    
+                                    
+                                 </div>
+                                 
+                              </li>
+                           </ol>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>Choose <b>Next</b>.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>On the <b>Set permissions</b> page, you manage the permissions that are
+                              set on the bucket that you are creating. 
+                           </p>
+                           
+                           <p>Under <b>Block public access (bucket settings)</b>, we recommend that you
+                              do not change the default settings that are listed under <b>Block all public
+                                 access</b>. You can change the permissions after you create the bucket. 
+                           </p>
+                           
+                           <div class="aws-note">
+                              <p class="aws-note">Warning</p>
+                              <p>We highly recommend that you keep the default access settings for blocking public
+                                 access to the bucket that you are creating. Public access means that anyone in the
+                                 world
+                                 can access the objects in the bucket. 
+                              </p>
+                           </div>
+                           
+                           <p>If you intend to use the bucket to store Amazon S3 server access logs, in the
+                              <b>Manage system permissions</b> list, choose <b>Grant Amazon S3 Log
+                                 Delivery group write access to this bucket</b>. 
+                           </p>
+                           
+                           <div class="mediaobject">
+                              
+                              
+                              <img src="assets/images/create-bucket-set-permissions.png" alt="&#xA;          Set permissions page with default settings.&#xA;        " style="max-width:100%" />
+                              
+                              
+                           </div>
+                           
+                           <p>When you're done configuring permissions on the bucket, choose
+                              <b>Next</b>.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>On the <b>Review</b> page, verify the settings. If you want to change
+                              something, choose <b>Edit</b>. If your current settings are correct, choose
+                              <b>Create bucket</b>.
+                           </p>
+                           
+                        </li>
+                     </ol>
+		
+		
+		</section>
+
+	
+	
+	</div>
+</body>
+</html>
